@@ -1,0 +1,94 @@
+.banner {
+    padding: 36px 70px;
+    min-height: calc(100vh - var(--header-height));
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    color: var(--color-light);
+    background-color: var(--color-dark-alternate);
+
+    &__body {
+        text-transform: uppercase;
+    }
+
+    &__info {
+        display: flex; //для псевдоэлемента
+        align-items: end;
+        font-weight: 700;
+        font-size: clamp(16px, 1.56vw, 30px); //30/1920*100
+        line-height: 1.27;
+        // text-transform: uppercase;
+    }
+    &__info::before {
+        content: '';
+        width: clamp(60px, 10.1vw, 194px); //194/1920*100
+        aspect-ratio: 1;
+        margin-right: 30px;
+        background: url('../../../public/assets/arrow/arrow.svg') center/contain no-repeat;
+        rotate: -90deg;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: min(18.75vw, 360px); //360/1920*100
+        line-height: 1;
+    }
+
+    &__pagination-list {
+        display: flex;
+        justify-content: center;
+        // column-gap: 14px;
+    }
+
+    &__pagination-item {
+        display: flex;
+    }
+
+    &__pagination-button {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 7px;
+        background-color: transparent;
+        border: none;
+    }
+
+    &__pagination-button::after {
+        content: '';
+        width: 10px;
+        aspect-ratio: 1;
+        border: var(--border);
+        border-radius: 50%;
+        transition-duration: var(--transition-duration);
+    }
+
+    &__pagination-button.is-current::after{
+        background-color: var(--color-light);
+    }
+
+    &__pagination-button:not(.is-current):hover::after {
+        border-color: var(--color-light-gray);
+    }
+}
+
+
+@media (max-width:1024px) {
+    .banner {
+        padding-inline: 15px;
+        row-gap: 10px;
+
+        
+    }
+}
+
+@media (max-width:767px) {
+    .banner {
+        &__info::before {
+            margin-right: 10px;
+        }
+
+        &__info {
+            margin-bottom: 5px;
+        }
+    }
+}
