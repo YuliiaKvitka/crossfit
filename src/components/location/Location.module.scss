@@ -1,0 +1,44 @@
+.location {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media (max-width:1024px){
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    &__map {
+
+        &-image {
+            height: auto;
+        }
+    }
+
+    &__body {
+        padding: 80px 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        @media (max-width:767px){
+            padding-block: 40px;
+        }
+    }
+
+    &__title:not(:last-child) {
+        margin-bottom: 14px;
+    }
+
+    &__description {
+        max-width: 490px;
+    }
+    &__description:not(:last-child) {
+        margin-bottom: 37px;
+
+        @media (max-width:767px){
+            margin-bottom: 20px;
+        }
+    }
+}

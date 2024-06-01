@@ -2,6 +2,7 @@ import { Heebo, Yantramanav } from "next/font/google";
 import "./globals.css";
 import '../styles/styles.scss'
 import Header from "@/components/header/Header";
+import Footer from "@/components/footer/Footer";
 
 const heebo = Heebo({ weight: ['300', '700'],  subsets: ["latin"] });
 const yantramanav = Yantramanav({ weight: '700',  subsets: ["latin"] });
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
       <body className={heebo.className}>
         <Header />
         {children}
+        <Footer/>
       </body>
     </html>
   );

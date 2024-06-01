@@ -1,0 +1,85 @@
+// @import '../../styles/button';
+
+.motivation {
+
+    &__item:nth-child(even) {
+        // четные элементы
+        background-color: var(--color-dark-alternate);
+    }
+
+    &__item:nth-child(even) &__card {
+        flex-direction: row-reverse;
+    }
+
+    &__card {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        column-gap: clamp(30px, 10.42vw, 200px);// 200/1920*100
+
+        &-image {
+            margin-block: -60px;
+        }
+
+        &-body {
+            padding-left: 35px;
+        }
+
+        &-title {
+            margin-bottom: 14px;
+        }
+
+        &-description {
+            max-width: 400px;
+            margin-bottom: 37px;
+        }
+        
+    }
+}
+
+@media (max-width:1919px) {
+    .motivation {
+        &__card {
+            &-image {
+                margin-block: -20px;
+            }
+        }
+    }
+}
+
+@media (max-width:1024px) {
+    .motivation {
+        &__card {
+            padding-block: 50px;
+            &-image {
+                max-width: 30%;
+                height: auto;
+                margin-block: 0;
+            }
+        }
+    }
+}
+
+@media (max-width:767px) {
+    .motivation {
+
+        &__card, &__item:nth-child(even) &__card {
+            flex-direction: column-reverse;
+
+        
+        }
+        &__card {
+            row-gap: 30px;
+            padding-block: 30px;
+
+                &-image {
+                max-width: 60%;
+            }
+
+            &-description {
+                margin-bottom: 20px;
+            }
+        }
+
+    }
+}
